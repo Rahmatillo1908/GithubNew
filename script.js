@@ -3,7 +3,7 @@ const hourElement = document.querySelector('.hour');
 const minutElement = document.querySelector('.minut');
 const secondElement = document.querySelector('.second');
 
-const endTime = new Date(Date.now() - 163 * 24 * 60 * 60 * 1000); // 163 days
+const endTime = new Date(Date.now() - 163 * 24 * 60 * 60 * 1000); 
 
 setInterval(() => {
   const now = new Date();
@@ -19,3 +19,14 @@ setInterval(() => {
   minutElement.textContent = minutes;
   secondElement.textContent = seconds;
 }, 1000);
+
+let scrollDiv = document.querySelector(".scroll")
+
+window.addEventListener("scroll", ()=>{
+    console.log("salom");
+    if (window.scrollY > 100) {
+        scrollDiv.style.opacity = 1
+    }else{
+        scrollDiv.style.opacity = 0
+    }
+})
